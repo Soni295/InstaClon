@@ -1,0 +1,97 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after{
+  box-sizing: inherit;
+}
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-weight: 200;
+  font-size: $px1 * 40;
+  margin: $px1 * 20;
+}
+
+body .root {
+  margin: 0px;
+  padding: 0px;
+}
+
+a , button {
+  border: none;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form {
+  padding: 5px 2px 3px 7px;
+  font-size: $px1 * 17;
+  border-radius: 10px;
+  border: 1px solid $grey;
+
+  &:focus {
+    border-color: $darkBlue;
+    outline: none;
+  }
+}
+
+@for $i from 1 through 4 {
+  $i: $i * 5;
+  .m {
+    &y-#{$i} {
+      margin-top: $px1 * $i;
+      margin-bottom: $px1 * $i;
+    }
+    &t-#{$i} {
+      margin-top: $px1 * $i;
+    }
+    &b-#{$i} {
+      margin-bottom: $px1 * $i;
+    }
+    &x-#{$i} {
+      margin-left: $px1 * $i;
+      margin-right: $px1 * $i;
+    }
+    &l-#{$i} {
+      margin-left: $px1 * $i;
+    }
+    &r-#{$i} {
+      margin-right: $px1 * $i;
+    }
+  }
+
+  .p {
+    &y-#{$i} {
+      padding-top: $px1 * $i;
+      padding-bottom: $px1 * $i;
+    }
+    &t-#{$i} {
+      padding-top: $px1 * $i;
+    }
+    &b-#{$i} {
+      padding-bottom: $px1 * $i;
+    }
+    &x-#{$i} {
+      padding-left: $px1 * $i;
+      padding-right: $px1 * $i;
+    }
+    &l-#{$i} {
+      padding-left: $px1 * $i;
+    }
+    &r-#{$i} {
+      padding-right: $px1 * $i;
+    }
+  }
+}
+
+
+.hide-for-phone{
+  display: none;
+  visibility: hidden;
+  @include breakpoint-up(large){
+    visibility: visible;
+    display: block;
+  }
+}
