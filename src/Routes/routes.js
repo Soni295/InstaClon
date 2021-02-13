@@ -1,10 +1,9 @@
-import LogIn from '../Page/LogIn'
+import { LogIn } from '../Page/LogIn'
 
-const routes = [
+
+export const routes = [
   {
     path: '/',
     component: LogIn
   }
 ]
-
-export default routes

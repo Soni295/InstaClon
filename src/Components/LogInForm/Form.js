@@ -1,28 +1,27 @@
-import { useReducer, useState } from "react"
-import Form from "../Global/Forms/Form"
+import { useReducer, useState, useEffect } from "react"
+import { Form } from "../Global/Forms/Form"
 import { inputsElements, initState } from './DataInputs'
-
-const reducer = (state, event) =>
-  ({...state, [event.name]: event.value})
+import { handleChange, reducer } from './Reducer'
 
 
-function LogiInForm(){ 
-
+export const LogiInForm = () => { 
   const [ formLogin, setFormLogin ] = useReducer(reducer, initState)
-  const [disable, setDisable] = useState(true)
+  const [ disable, setDisable ] = useState(true)
 
-  const handleChange = event => {
-    const {name, value} = event.target
-    setFormLogin({name, value})
-  }
-
-
+  useEffect( () => {
+    if(formLogin.user.length >= 8 && formLogin.password.length >= 8) {
+      setDisable(false)
+    }
+    else{
+      setDisable(true)
+    }
+  }, [formLogin])
 
   return(
     <Form 
       dataInputs={inputsElements}
       value={formLogin}
-      onChange={handleChange}
+      onChange={e => handleChange(e, setFormLogin)}
     >
       <input 
         disabled={disable} 
@@ -32,4 +31,3 @@ function LogiInForm(){
     </Form>
   )
 }
-export default LogiInForm

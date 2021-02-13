@@ -1,11 +1,11 @@
-import LogInForm from '../Components/LogInForm/Index'
+import { LogInBox } from '../Components/LogInForm/Index'
+import { CelCarussel } from '../Components/LogInForm/CelCarussel'
 
-const LogIn = () => {
+export const LogIn = () => {
   return (
-    <>
-      <LogInForm />
-    </>
+    <div className="main">
+      <CelCarussel />
+      <LogInBox />
+    </div>
   )
 }
-
-export default LogIn

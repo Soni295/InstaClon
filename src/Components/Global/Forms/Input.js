@@ -1,4 +1,4 @@
-const Input = ({name, type='text', value, onChange, placeholder}) => {
+export const Input = ({name, type='text', value, onChange, placeholder}) => {
 
   return(
     <input 

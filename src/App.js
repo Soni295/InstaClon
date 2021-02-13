@@ -1,6 +1,6 @@
 import './Sass/Index.scss';
 import { Route } from 'react-router-dom'
-import routes from './Routes/routes'
+import { routes }from './Routes/routes'
 import {
   BrowserRouter as BR,
   Switch, 

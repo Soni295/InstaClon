@@ -1,6 +1,6 @@
-import Input from "./Input"
+import { Input } from "./Input"
 
-const Form = ({children, ...rest}) => {
+export const Form = ({children, ...rest}) => {
 
   const { dataInputs, value, onChange } = rest
 
@@ -22,5 +22,3 @@ const Form = ({children, ...rest}) => {
     </form>
   )
 }
-
-export default Form

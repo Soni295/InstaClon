@@ -1,15 +1,13 @@
-import Form from './Form'
-import Links from './links'
-import Separator from '../Global/Separator'
+import { LogiInForm } from './Form'
+import { Links } from './links'
+import { Separator } from '../Global/Separator'
 
-const LogInForm = () => {
+export const LogInBox = () => {
   return(
-    <div className="main">
-      <div className="cel-carussel hide-for-phone">
-      </div>
+    <>
       <div className="form-log-in">
         <h1>InstaClon</h1>
-        <Form />
+        <LogiInForm />
         <Separator>or</Separator>
         <Links />
       </div>
@@ -20,7 +18,6 @@ const LogInForm = () => {
           <a href="#"> Sing up</a>
         </p>
       </div>
-    </div>
+    </>
   )
 }
-export default LogInForm
