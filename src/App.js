@@ -1,13 +1,14 @@
-import './Sass/Index.scss';
 import { Route } from 'react-router-dom'
 import { routes }from './Routes/routes'
 import {
   BrowserRouter as BR,
-  Switch, 
+  Switch,
 } from 'react-router-dom'
 
-const App = () => (
-  <BR> 
+import './Sass/Index.scss';
+
+export const App = () => (
+  <BR>
     <Switch>
       {
         routes.map(({path, component}) =>
@@ -19,6 +20,5 @@ const App = () => (
         )
       }
     </Switch>
-  </BR> 
+  </BR>
 )
-export default App;

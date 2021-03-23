@@ -3,5 +3,5 @@ export const handleChange = (event, set) => {
   set({name, value})
 }
 
-export const reducer = (state, event) => 
+export const reducer = (state, event) =>
   ({...state, [event.name]: event.value})

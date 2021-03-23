@@ -2,16 +2,24 @@
   border-radius: 0.3125rem;
   padding: 0.625rem;;
   font-size: 1rem;
+  border: none;
 
-  &:disabled{
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:disabled {
     cursor: default;
   }
 
-  &_light-blue {   
-    background: $blue; 
+  &_light-blue {
+    background: $blue;
     color: $white;
 
-    &:disabled{
+    &:hover {
+      background: rgba(72, 130, 218, 1);
+    }
+    &:disabled {
       background: $blueLight;
     }
   }

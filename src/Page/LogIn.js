@@ -1,11 +1,11 @@
-import { LogInBox } from '../Components/LogInForm/Index'
-import { CelCarussel } from '../Components/LogInForm/CelCarussel'
+import { TemplaceLogIn } from '../Components/Templace/TemplaceLogIn'
+import { CelCarussel } from '../Components/Templace/CelCarussel'
 
 export const LogIn = () => {
   return (
     <div className="main">
       <CelCarussel />
-      <LogInBox />
+      <TemplaceLogIn />
     </div>
   )
 }

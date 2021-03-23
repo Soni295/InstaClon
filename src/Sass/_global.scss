@@ -18,11 +18,19 @@ body .root {
   padding: 0px;
 }
 
-a , button {
+
+button {
   border: none;
   outline: none;
-  text-decoration: none;
   cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+
+  &:visited {
+    color: #1313ef;
+  }
 }
 
 .form {
