@@ -1,55 +1,43 @@
 import { useState, useEffect } from 'react'
+import { useUserLogIn } from '../../Hooks/useUserLogIn'
 import { Btn } from '../Atoms/Btn'
-
-export const useInput = (initState, type='text') => {
-  const [value, setValue] = useState(initState)
-
-  const bind = {
-    type,
-    value,
-    onChange: e => {setValue(e.target.value)}
-  }
-  return [value, bind]
-}
-
+import { URL } from '../../Hooks/url'
 
 export const FormLogin = () => {
-  const [user, bindUser] = useInput('', 'text')
-  const [password, bindPassword] = useInput('','password' )
+  const [user, bindUser, bindPassword] = useUserLogIn({
+    user: '',
+    password: ''
+  })
   const [disable, setDisable] = useState(true)
 
   useEffect( () => {
-    setDisable(user.length <= 6 && password.length <= 8)
-  }, [user, password])
+    setDisable((user.user.length <= 6 || user.password.length <= 8))
+  }, [user])
 
-
-  const handleSubmit = async e => {
-    e.preventDefault()
-
+  const UseLogIn = async (event) => {
+    event.preventDefault()
     const init = {
       method: 'POST',
-      body: JSON.stringify({user, password}),
+      body: JSON.stringify(user),
       headers:{
         'Content-Type': 'application/json'
       }
     }
-    const url = 'http://localhost:5000/User/LogIn'
-    const data = await(await fetch(url,init)).json()
-    console.log(data)
-
-  }
+    const link = URL + 'User/LogIn'
+    const data = await(await fetch(link, init)).json()
+    if(data.msg === 'success')console.log(data.user)
+    else alert("This count doesn't exist")
+}
 
   return(
-    <form onSubmit={e  => {handleSubmit(e)}}>
+    <form onSubmit={e  => {UseLogIn(e)}}>
       <input
         className='form'
-        {...bindUser}
-        placeholder='Email or user name'
+        {... bindUser}
       />
       <input
         className='form'
         {...bindPassword}
-        placeholder='*********'
       />
       <Btn
         disable={disable}
