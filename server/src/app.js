@@ -5,8 +5,6 @@ const cors = require('cors')
 const route = require('./routes/route')
 const mysql = require('mysql')
 
-
-
 // server
 const app = express()
 
