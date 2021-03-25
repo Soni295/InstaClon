@@ -1,13 +1,15 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
+/instaclon/node_modules
 /node_modules
 /.pnp
 .pnp.js
-
+/server/node_modules
+/server/src/keys.js
 # testing
 /coverage
-
+/apuntes.txt
 # production
 /build
 
