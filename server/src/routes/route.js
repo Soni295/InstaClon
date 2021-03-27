@@ -1,19 +1,6 @@
-const express = require('express')
-const { main, logIn, logOut, signIn } = require('./CtrlUsers/User')
+const app = require('express')()
 
-
-const error = (req, res) => {
-  res.send('Not exist page')
-}
-
-const route = express.Router()
-route
-  .get('/' , main)
-  .post('/User/LogIn' , logIn)
-  .post('/User/SignIn' , signIn)
-  .get('/User/LogOut' , logOut)
-  .get('/*' , error)
-
-
-
-module.exports = route
+app
+  .use('/User' ,require('./CtrlUsers/User'))
+  .all('/*' , (req, res) => {  res.send('Doesn\'t exist this page') })
+module.exports = app

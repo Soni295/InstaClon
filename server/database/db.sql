@@ -20,3 +20,7 @@ CREATE TABLE photo (
 );
 
 DESCRIBE photo;
+
+
+INSERT INTO users (userName, password)
+VALUES ('example1', 'example1');
