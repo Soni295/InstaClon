@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react'
 import { useUserLogIn } from '../../Hooks/useUserLogIn'
 import { Btn } from '../Atoms/Btn'
-import { URL } from '../../Hooks/url'
+import { usePost } from '../../Hooks/useFetch'
 
 export const FormLogin = () => {
+
+  const [disable, setDisable] = useState(true)
   const [user, bindUser, bindPassword] = useUserLogIn({
     user: '',
     password: ''
   })
-  const [disable, setDisable] = useState(true)
 
   useEffect( () => {
     setDisable((user.user.length <= 6 || user.password.length <= 8))
@@ -16,21 +17,13 @@ export const FormLogin = () => {
 
   const UseLogIn = async (event) => {
     event.preventDefault()
-    const init = {
-      method: 'POST',
-      body: JSON.stringify(user),
-      headers:{
-        'Content-Type': 'application/json'
-      }
-    }
-    const link = URL + 'User/LogIn'
-    const data = await(await fetch(link, init)).json()
-    if(data.msg === 'success')console.log(data.user)
+    const data = usePost('User/LogIn', user)
+    if(data.msg === 'success') console.log(data)
     else alert("This count doesn't exist")
 }
 
   return(
-    <form onSubmit={e  => {UseLogIn(e)}}>
+    <form onSubmit={UseLogIn}>
       <input
         className='form'
         {... bindUser}
