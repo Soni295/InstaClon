@@ -14,3 +14,6 @@ sleep 1
 echo ""
 echo "passwords are differents"
 curl -X POST -d 'user=example10' -d 'email=example10@hotmail.com' -d 'password=123456a' -d 'password2=123456' http://localhost:5000/User/SignIn
+
+
+
