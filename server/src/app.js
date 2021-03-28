@@ -4,8 +4,6 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const {SERVER ,PORT} = require('./VARIABLES')
 
-
-
 // server
 const app = express()
 
