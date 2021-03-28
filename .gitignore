@@ -6,7 +6,7 @@
 */.env
 /.pnp
 .pnp.js
-/server/src/keys.js
+
 # testing
 /coverage
 /apuntes.txt
