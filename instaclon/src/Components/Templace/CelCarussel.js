@@ -3,8 +3,6 @@ export const CelCarussel = () => {
     border: '1px solid red'
   }
   return (
-    <div style={style} className="cel-carussel hide-for-phone">
-
-    </div>
+    <div style={style} className="cel-carussel hide-for-phone"> </div>
   )
 }

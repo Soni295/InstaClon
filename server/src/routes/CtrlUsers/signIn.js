@@ -4,9 +4,7 @@ const checkPassword = (req, res, next) => {
   const { password, password2 } = req.body
   if(password !== password2){
     res.json({msg: 'Passwords are different'})
-  } else {
-    next()
-  }
+  } else next()
 }
 
 const existUser = (req, res, next) => {

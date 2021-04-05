@@ -1,6 +1,6 @@
 import { Route } from 'react-router-dom'
 import { routes }from './Routes/routes'
-import { UserProvider } from './Context/UserContext'
+import { UserProvider } from './Context/UserContext/UserContext'
 
 import {
   BrowserRouter as BR,

@@ -1,0 +1,21 @@
+Front
+  Pages
+    Log in -> user no logged else relink => Home
+      div main
+
+
+    Sign in -> user no logged else relink => Home
+    Home -> user logged else relink => Login
+    Profile -> user logged else relink => Login
+    Picture -> user logged else relink => Login
+
+End
+  Urls
+    /User
+      /Login
+      /Signin
+      /Delete
+    /Picture
+      /addPicture
+      /deletePicture
+
