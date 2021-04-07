@@ -13,15 +13,7 @@ export const App = () => (
   <BR>
     <Switch>
     <UserProvider>
-      {
-        routes.map(({path, component}) =>
-          <Route exact
-            key={path}
-            path={path}
-            component={component}
-          />
-        )
-      }
+      {routes.map(({...route}) => <Route exact {...route} />)}
     </UserProvider>
     </Switch>
   </BR>

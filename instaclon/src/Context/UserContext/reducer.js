@@ -1,10 +1,11 @@
-export const initState = {
+export const init = {
   user: '',
   isLoading: false,
   login: false,
   token: ''
 }
 
+export const initState = JSON.parse(localStorage.getItem('user')) || init
 export const typeAction = {
   loading: 'LOADING',
   loginSuccess: 'LOGIN_SUCCESS',
@@ -12,21 +13,28 @@ export const typeAction = {
 }
 
 export const reducer = (state, action) => {
+  let newState
   switch(action.type) {
     case typeAction.loading:
-      return {...state, isLoading: true}
+      newState = {...state, isLoading: true}
+      break
     case typeAction.loginSuccess:
-      return {
+      newState = {
         ...state,
         isLoading: false,
         user: action.user,
         token: action.token,
         login: true
       }
+      break
     case typeAction.loginFail:
-      return { ...state, isLoading: false }
+      newState = { ...state, isLoading: false }
+      break
     default:
-      return state
+      newState = { ...state }
   }
+
+  localStorage.setItem('user', JSON.stringify(newState))
+  return newState
 }
 
