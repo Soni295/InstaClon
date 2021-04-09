@@ -6,6 +6,7 @@ export const init = {
 }
 
 export const initState = JSON.parse(localStorage.getItem('user')) || init
+
 export const typeAction = {
   loading: 'LOADING',
   loginSuccess: 'LOGIN_SUCCESS',

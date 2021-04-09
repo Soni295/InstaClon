@@ -1,7 +1,10 @@
 import { useState } from 'react'
 
-export const useUserLogIn = initState => {
-  const [value, setValue] = useState(initState)
+export const useUserLogIn = ()=> {
+  const [value, setValue] = useState({
+    user: '',
+    password: ''
+  })
   const bindUser = {
     type: 'text',
     name: 'user',

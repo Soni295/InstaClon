@@ -12,5 +12,4 @@ class Route {
 export const routes = [
   new Route(LogIn, '/'),
   new Route(Home, '/Home'),
-
 ]

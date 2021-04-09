@@ -1,0 +1,38 @@
+.box-of-photo {
+  width: 300 * $px1;
+  @include grid;
+  border: 1px $grey solid;
+  grid-auto-flow: row;
+  margin: auto;
+  margin-top: 30 * $px1;
+
+  &__photo {
+    max-width: 100%;
+  }
+
+  &__head {
+    @include grid;
+    border-radius: 8 * $px1 8 * $px1  0 * $px1 0 * $px1;
+    width: 100%;
+    background-color: $blueLight;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+
+    &__left {
+      margin-left: 5 * $px1;
+      display: flex;
+      grid-column: 1/2;
+
+      &__name {
+        margin-left: 8 * $px1;
+      }
+    }
+  }
+}
+
+.img-profile {
+  border-radius: 100%;
+  width: 40 *$px1;
+  height: 40 * $px1;
+  align-self: center;
+}

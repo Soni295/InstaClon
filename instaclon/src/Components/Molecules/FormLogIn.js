@@ -6,14 +6,10 @@ import { useContext } from 'react'
 import { UserContext } from '../../Context/UserContext/UserContext'
 
 export const FormLogin = () => {
-
   const [disableBtn, setDisableBtn] = useState(true)
-  const { dispatch, typeAction } = useContext(UserContext)
-
-  const [user, bindUser, bindPassword] = useUserLogIn({
-    user: '',
-    password: ''
-  })
+  const { UseSetUser } = useContext(UserContext)
+  const {loadingUserLogin, loginSuccess, errorLogin} = UseSetUser()
+  const [user, bindUser, bindPassword] = useUserLogIn()
 
   useEffect(() => {
     setDisableBtn((user.user.length <= 6 || user.password.length <= 7))
@@ -21,17 +17,14 @@ export const FormLogin = () => {
 
   const UseLogIn = async (event) => {
     event.preventDefault()
-    dispatch({type: typeAction.loading})
+    loadingUserLogin()
 
     const data = await usePost('User/LogIn', user)
-
-    if(data.msg === 'success') {
-      dispatch({type: typeAction.loginSuccess, user: data.user, token: data.token})
+    if(data.msg === 'success'){
+      const {user, token} = data
+      loginSuccess({user, token})
     }
-    else {
-      dispatch({type: typeAction.loginFail, user: data.user, token: data.token})
-    }
-
+    else errorLogin()
   }
   console.log('I\'m in modules formlogin user: example1@hotmail.com pass: example1')
   return(
