@@ -1,33 +1,71 @@
 .box-of-photo {
-  width: 300 * $px1;
+  width: 500 * $px1;
   @include grid;
-  border: 1px $grey solid;
+  // border: 1px $grey solid;
+
   grid-auto-flow: row;
   margin: auto;
   margin-top: 30 * $px1;
+  &__footer {
+    padding-left: 10 * $px1;
 
+    border: 1px $grey solid;
+    border-radius: 0 * $px1 0 * $px1 8 * $px1 8 * $px1;
+
+    & > input {
+      border: 1px $grey solid;
+      border-radius: 30px;
+      font-size: 16 * $px1;
+      padding: 5px 15px;
+      margin-top: 10 * $px1;
+      margin-right: 10 * $px1;
+    }
+
+    & > input:hover {
+      cursor: pointer;
+    }
+
+    &__likes {
+      margin-top: 10 * $px1;
+      font-size: 17 * $px1 ;
+    }
+    &__user {
+      margin-top: 0px;
+    }
+    &__desc {
+      margin-top: 0px;
+    }
+  }
   &__photo {
     max-width: 100%;
+    border: 1 * $px1 $grey solid;
+    border-top: none;
   }
 
   &__head {
     @include grid;
-    border-radius: 8 * $px1 8 * $px1  0 * $px1 0 * $px1;
+    border: 1 * $px1 $grey solid;
+    border-radius: 8 * $px1 8 * $px1 0 * $px1 0 * $px1;
+    border-bottom: none;
     width: 100%;
     background-color: $blueLight;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
 
     &__left {
-      margin-left: 5 * $px1;
+      margin-left: 12 * $px1;
       display: flex;
       grid-column: 1/2;
 
       &__name {
+        margin: 14 * $px1 0 * $px1;
+        font-size: 20 * $px1;
         margin-left: 8 * $px1;
       }
     }
   }
+
+
 }
 
 .img-profile {

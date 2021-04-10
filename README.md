@@ -2,22 +2,19 @@
 ### Es un clon de instagram usando React, Redux, React-route-dom y Sass
 ---
 
-
 Se arranca el servidor con los siguientes comandos
 
-
 ```sh
-> $ cd InstaClon 
+> $ cd instaClon
+> $ cd instaClon
 > $ npm start
 ```
-
 
 ## Caracteristicas
 
 |Funcionalidades|Estado|
 |---|---|
 |Login mail|---------------|
-|Login Google|---------------|
 |Guardado de Sesión|---------------|
 |Diseño Adaptativo|En proceso|
 |Comentar|---------------|

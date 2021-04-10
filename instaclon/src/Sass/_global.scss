@@ -6,6 +6,7 @@ html {
 *, *::before, *::after{
   box-sizing: inherit;
 }
+
 h1 {
   font-family: 'Pacifico', cursive;
   font-weight: 200;
@@ -18,6 +19,10 @@ body .root {
   padding: 0px;
 }
 
+p {
+  font-size: 20 * $px1;
+  margin: 16 * $px1 0 * $px1;
+}
 
 button {
   border: none;

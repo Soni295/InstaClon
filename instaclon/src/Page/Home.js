@@ -9,6 +9,15 @@ export const Likes = ({count}) => {
   return <p>{count} Likes</p>
 }
 
+
+export const ActionBox = () => {
+  return (
+    <div>
+
+    </div>
+  )
+}
+
 export const LikeButton = () => {
   return <div> </div>
 }
@@ -46,6 +55,26 @@ const BodyBoxOfPhoto = ({link}) => {
   )
 }
 
+const FooterBoxOfPhoto = ({likes, user, description}) => {
+
+  return (
+    <div className='box-of-photo__footer'>
+      <input type='button' value='I Like It'/>
+      <input type='button' value='Comment'/>
+      <input type='button' value='Share'/>
+      <div>
+        {likes != 0 &&
+          <p className='box-of-photo__footer__likes'>{likes} likes</p>
+        }
+        <p className='box-of-photo__footer__user'>{user}</p>
+        <p className='box-of-photo__footer__desc'>
+          {description}
+        </p>
+      </div>
+    </div>
+  )
+}
+
 
 export const BoxOfPhoto = () => {
   const init = {
@@ -78,7 +107,7 @@ export const BoxOfPhoto = () => {
 
   const [data, setData] = useState(init)
 
-  const { user, img } = data
+  const { user, img, likes, description } = data
 
 
   return (
@@ -86,6 +115,8 @@ export const BoxOfPhoto = () => {
 
       <HeadBoxOfPhoto iconLink={img} user={user}/>
       <BodyBoxOfPhoto link={img}/>
+      <FooterBoxOfPhoto likes={likes} user={user} description={description}/>
+
     </div>
   )
 }
