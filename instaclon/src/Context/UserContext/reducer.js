@@ -38,4 +38,3 @@ export const reducer = (state, action) => {
   localStorage.setItem('user', JSON.stringify(newState))
   return newState
 }
-
